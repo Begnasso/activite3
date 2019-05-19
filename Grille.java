@@ -11,6 +11,7 @@ package com.mycompany.mavensudoku;
  */
     /** * Interface d'une grille de sudoku */ 
 public interface Grille { 
+     
 /**  * Caractere de case vide  */ 
 static final char EMPTY = '@';
   /**  * Caractere possible a mettre dans la grille  
@@ -28,7 +29,7 @@ public int getDimension();
 *   
 * @param x       position x dans la grille  
 * @param y       position y dans la grille  
-* @param value 
+* @param value  
 *            valeur a mettre dans la case  
 * @throw IllegalArgumentException si x ou y sont hors bornes (0-8)  
 * @throw IllegalArgumentException si la valeur est interdite aux vues des  

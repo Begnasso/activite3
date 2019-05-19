@@ -5,6 +5,10 @@
  */
 package com.mycompany.mavensudoku;
 
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+
+
 /**
  *
  * @author Mme OUEDRAOGO
@@ -12,32 +16,57 @@ package com.mycompany.mavensudoku;
 /** * Implementation d'une grille 
  */ 
 public class GrilleImpl implements Grille {  
-
+private char[][] grille; // la grille de sudoku
     @Override
     public int getDimension() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-   int dim=16;
+   int dim=9;
         return dim;
     }
 
     @Override
     public void setValue(int x, int y, char value) throws IllegalArgumentException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        grille[x][y]=value;
      }
 
     @Override
     public char getValue(int x, int y) throws IllegalArgumentException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        char value;
+        value=grille[x][y];
+        return value;
     }
 
     @Override
     public boolean complete() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        char val='0';
+        for (int i=0;i<getDimension();i++)
+             for (int j=0;j<getDimension();j++){
+                if (grille[i][j] == val)
+                    return false;
+             }
+	return true; 
     }
 
     @Override
     public boolean possible(int x, int y, char value) throws IllegalArgumentException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       if (x>getDimension() || y>getDimension()){
+            return false;
+            }
+       else return true;
     }
     
+    
+     @Test
+	 public void testGetDimension() {
+	  int dim = 9;
+	assertEquals(dim, getDimension());
+}
+    
+         
+    @Test
+	 public void testGetValue(int x, int y) {
+	  char value='0';
+	assertEquals(value, getValue(x, y));
+}
 }
