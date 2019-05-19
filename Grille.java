@@ -28,7 +28,7 @@ public int getDimension();
 *   
 * @param x       position x dans la grille  
 * @param y       position y dans la grille  
-* @param value  
+* @param value 
 *            valeur a mettre dans la case  
 * @throw IllegalArgumentException si x ou y sont hors bornes (0-8)  
 * @throw IllegalArgumentException si la valeur est interdite aux vues des  

@@ -16,7 +16,7 @@ public class GrilleImpl implements Grille {
     @Override
     public int getDimension() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-   int dim=9;
+   int dim=16;
         return dim;
     }
 
